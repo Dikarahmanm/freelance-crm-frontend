@@ -1,44 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
-interface DashboardLayoutProps {
-  children: React.ReactNode;
-}
-
-const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
-  return (
-    <div className="flex min-h-screen">
-      <aside className="w-64 bg-gray-800 text-white p-6">
-        <h1 className="text-2xl font-bold mb-6">Freelance CRM</h1>
-        <nav>
-          <ul className="space-y-2">
-            <li>
-              <Link to="/" className="block p-2 hover:bg-gray-700 rounded">
-                Dashboard
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/clients"
-                className="block p-2 hover:bg-gray-700 rounded"
-              >
-                Clients
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/projects"
-                className="block p-2 hover:bg-gray-700 rounded"
-              >
-                Projects
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-      <main className="flex-1 p-6">{children}</main>
-    </div>
-  );
+const DashboardLayout: React.FC = () => {
+    return (
+        <div className="min-h-screen bg-gray-100">
+            <header className="bg-white shadow">
+                <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <h1 className="text-3xl font-bold text-gray-900">Freelance CRM</h1>
+                </div>
+            </header>
+            <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                <Outlet />
+            </main>
+        </div>
+    );
 };
 
 export default DashboardLayout;

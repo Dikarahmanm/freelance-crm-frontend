@@ -1,13 +1,21 @@
 import React from 'react';
-import Button from '../components/button';
+import Card from '../components/Card';
 
 const Home: React.FC = () => {
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Welcome to Freelance CRM</h1>
-      <Button variant="primary" onClick={() => alert('Clicked!')}>
-        Get Started
-      </Button>
+      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Card title="Total Clients">
+          <p className="text-3xl font-semibold">12</p>
+        </Card>
+        <Card title="Active Projects">
+          <p className="text-3xl font-semibold">5</p>
+        </Card>
+        <Card title="Pending Invoices">
+          <p className="text-3xl font-semibold">3</p>
+        </Card>
+      </div>
     </div>
   );
 };

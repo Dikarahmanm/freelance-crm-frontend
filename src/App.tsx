@@ -1,15 +1,18 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import DashboardLayout from './layouts/DashboardLayout';
 import Home from './pages/Home';
+import Clients from './pages/Clients';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <Routes>
+    <Routes>
+      <Route element={<DashboardLayout />}>
         <Route path="/" element={<Home />} />
-        {/* Add more routes later (e.g., /clients, /projects) */}
-      </Routes>
-    </div>
+        <Route path="/clients" element={<Clients />} />
+        {/* Add more routes later (e.g., /projects, /invoices) */}
+      </Route>
+    </Routes>
   );
 }
 
